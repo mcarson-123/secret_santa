@@ -1,0 +1,5 @@
+<%= @party.id %>
+<!-- allow options to be added -->
+<%= render partial:"participants/participants" %>
+<%= render partial:"participants/new" %>
+<%= button_to "Generate Secret Santas", {:controller => :parties, :action => :create_giftings, id: @party.id}, {:remote => true, :method => :get} %>

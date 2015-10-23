@@ -1,0 +1,10 @@
+Thanks for confirming, see you for the gift giving!
+
+If you have any gift preferences let your secret santa know below, otherwise happy shopping!
+<%= form_for(@participant) do |participant| %>
+
+  <div class="field">
+    <%= participant.text_field :gift_preferences %>
+  </div>
+
+<% end %>

@@ -1,0 +1,14 @@
+<%= form_for(@party) do |party| %>
+
+  <div class="field">
+    <%= party.label "New party" %><br />
+    <p>Party Name</p>
+    <%= party.text_field :name %>
+    <p>Theme</p>
+    <%= party.text_field :theme %>
+    <p>Spending Limit</p>
+    <%= party.text_field :spending_limit %>
+  </div>
+  <%= party.submit %>
+
+<% end %>
