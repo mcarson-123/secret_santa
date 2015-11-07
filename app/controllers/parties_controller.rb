@@ -19,13 +19,13 @@ class PartiesController < ApplicationController
   def create_giftings #create_giftings_party_path(@party)
     p "creating giftings"
     Giftings::Create.new(params[:id]).create
-    redirect_to "/parties/#{params[:id]}" #TODO redirect somewhere else
+    redirect_to "/participants/success"
   end
 
   private
 
   def party_params
-    params.require(:party).permit(:theme, :spending_limit, gift_options: [])
+    params.require(:party).permit(:theme, :name, :spending_limit, gift_options: [])
   end
 
 end

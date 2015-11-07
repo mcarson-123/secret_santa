@@ -1,10 +1,16 @@
-Thanks for confirming, see you for the gift giving!
+<div class="participant-edit-confirm">
+  <h2>Thanks for confirming, see you for the gift giving!</h2>
 
-If you have any gift preferences let your secret santa know below, otherwise happy shopping!
-<%= form_for(@participant) do |participant| %>
+  <p>If you have any gift preferences let your secret santa know below, otherwise happy shopping!</p>
+  <% if !@participant.party.theme.empty? %>
+  <p class="participant-confirm-theme">Party Theme: <%= @participant.party.theme %></p>
+  <% end %>
+  <%= form_for(@participant) do |participant| %>
 
-  <div class="field">
-    <%= participant.text_field :gift_preferences %>
-  </div>
+    <div class="field">
+      <%= participant.text_field :gift_preferences, placeholder: "Preferences..." %>
+    </div>
+    <%= participant.submit "Add Preferences", class: "add-preferences" %>
 
-<% end %>
+  <% end %>
+</div>

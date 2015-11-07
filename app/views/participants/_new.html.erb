@@ -1,10 +1,10 @@
 <%= form_for(@participant) do |participant| %>
 
   <div class="field">
-    <%= participant.label "New Participant" %><br />
-    <%= participant.text_field :email %>
+    <%= participant.text_field :name, placeholder: "Name" %>
+    <%= participant.text_field :email, placeholder: "Email Address" %>
     <%= hidden_field(:participant, :party_id, value: @party.id) %>
   </div>
-  <%= participant.submit "Add Participant" %>
+  <%= participant.submit "Add Guest", class: "new-participant-partial" %>
 
 <% end %>

@@ -1,5 +1,6 @@
-<%= @party.id %>
+<h1 class="party-show">Who's coming?</h1>
+<p class="party-show-reminder">(Don't forget to add yourself...)</p>
 <!-- allow options to be added -->
 <%= render partial:"participants/participants" %>
 <%= render partial:"participants/new" %>
-<%= button_to "Generate Secret Santas", {:controller => :parties, :action => :create_giftings, id: @party.id}, {:remote => true, :method => :get} %>
+<%= button_to "Generate Secret Santas", {:controller => :parties, :action => :create_giftings, id: @party.id}, {:method => :get} %>

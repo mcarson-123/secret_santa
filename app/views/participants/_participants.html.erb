@@ -1,7 +1,8 @@
 <%- @participants.each do |participant| %>
-<ul>
+<ul class="participants-partial">
   <li>
-    <%= participant.email %>
+    <%= participant.name %>
+    (<%= participant.email %>)
   </li>
 </ul>
 <% end %>
