@@ -1,4 +1,5 @@
 class ParticipantsController < ApplicationController
+  before_action :find_participant, only: [:edit, :update]
 
   def create
     @participant = Participant.create(participants_params)
@@ -6,11 +7,9 @@ class ParticipantsController < ApplicationController
   end
 
   def edit
-    @participant = Participant.find(params[:id])
   end
 
   def update
-    @participant = Participant.find(params[:id])
     @participant.update({ gift_preferences: Array.wrap(update_params[:gift_preferences]) })
     GiftingMailer.share_preferences(Gifting.find_by(giftee: @participant)).deliver_later
     redirect_to "/participants/success"
@@ -27,5 +26,10 @@ class ParticipantsController < ApplicationController
 
   def update_params
     params.require(:participant).permit(:gift_preferences)
+  end
+
+  def find_participant
+    gifting = Gifting.find_by(confirm_token: params[:confirm_token])
+    @participant = gifting.participant
   end
 end
