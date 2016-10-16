@@ -5,7 +5,7 @@
   <% if !@participant.party.theme.empty? %>
   <p class="participant-confirm-theme">Party Theme: <%= @participant.party.theme %></p>
   <% end %>
-  <%= form_for(@participant, url: { action: "update", confirm_token: @participant.gifting.confirm_token }) do |participant| %>
+  <%= form_for(@participant, url: { action: "update", id: @participant.encoded_id}) do |participant| %>
 
     <div class="field">
       <%= participant.text_field :gift_preferences, placeholder: "Preferences..." %>

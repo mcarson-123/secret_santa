@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :parties, only: [:show, :new, :create]
   get "parties/:id/create_giftings" => "parties#create_giftings"
-  resources :participants, only: [:create, :edit, :update], param: :confirm_token
+  resources :participants, only: [:create, :edit, :update]
 
   get "confirm/:confirm_token" => "giftings#confirm"
 

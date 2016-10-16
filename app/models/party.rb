@@ -14,6 +14,7 @@
 
 class Party < ActiveRecord::Base
   include HolidayPassphrase
+  include ObfuscateIds
 
   #---------------------------------------------------------------------
   # Associations

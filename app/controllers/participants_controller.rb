@@ -3,7 +3,8 @@ class ParticipantsController < ApplicationController
 
   def create
     @participant = Participant.create(participants_params)
-    redirect_to "/parties/#{@participant.party_id}"
+
+    redirect_to "/parties/#{@participant.party.encoded_id}"
   end
 
   def edit
@@ -29,7 +30,6 @@ class ParticipantsController < ApplicationController
   end
 
   def find_participant
-    gifting = Gifting.find_by(confirm_token: params[:confirm_token])
-    @participant = gifting.participant
+    @participant = Participant.obj_from_encoded_id(params[:id])
   end
 end

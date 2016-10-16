@@ -13,6 +13,7 @@
 #
 
 class Participant < ActiveRecord::Base
+  include ObfuscateIds
 
   #---------------------------------------------------------------------
   # Associations
