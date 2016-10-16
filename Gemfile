@@ -24,7 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'annotate'
-
+# gem 'zbase32' # Doesn't work for new versions of ruby
+gem "zimmermann-base32", require: "zbase32"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
