@@ -23,4 +23,12 @@ class Party < ActiveRecord::Base
   has_many :participants
   has_many :giftings, through: :participants
 
+  #---------------------------------------------------------------------
+  # Callbacks
+  #---------------------------------------------------------------------
+
+  before_create :generate_passphrase
+
+  holiday_passphrase :passphrase
+
 end
