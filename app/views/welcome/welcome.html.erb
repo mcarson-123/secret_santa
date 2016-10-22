@@ -1,0 +1,12 @@
+<h1>Happy Holidays!</h1>
+<%= link_to "Host a new secret santa party", {:controller => :parties, :action => :new} %>
+
+<%= form_for :existing_party, url: "parties/find", method: :post do |form| %>
+  <h2>Continue existing party</h2>
+  <% if flash[:error] == "no_parties_found" %>
+    <p>No parties found with those details</p>
+  <% end %>
+  <%= form.text_field :email, placeholder: "email" %>
+  <%= form.text_field :holiday_passphrase, placeholder: "holiday passphrase" %>
+  <%= form.submit "Find my party"  %>
+<% end  %>

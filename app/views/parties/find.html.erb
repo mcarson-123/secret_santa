@@ -1,0 +1,5 @@
+<% if @parties %>
+  <% @parties.each do |party| %>
+    <%= link_to "#{party.name}", {:controller => :parties, :action => :show, :id => party.encoded_id} %>
+  <%end %>
+<% end %>

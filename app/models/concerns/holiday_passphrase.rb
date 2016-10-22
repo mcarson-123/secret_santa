@@ -13,7 +13,7 @@ module HolidayPassphrase
   private
 
   def generate_holiday_passphrase
-    passphrase = "#{HOLIDAY_VERBS.sample}#{HOLIDAY_NOUNS.sample}"
+    passphrase = "#{HOLIDAY_VERBS.sample}#{HOLIDAY_VERBS.sample}#{HOLIDAY_NOUNS.sample}"
   end
 
   HOLIDAY_VERBS =
