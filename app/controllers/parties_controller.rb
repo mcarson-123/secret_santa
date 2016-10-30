@@ -34,7 +34,10 @@ class PartiesController < ApplicationController
   end
 
   def create_giftings
-    Giftings::Create.new(@party.id).create
+    p "*** PARTY", @party
+    Giftings::Create.new(@party).call
+    # TODO: run in job
+    Participants::EmailHosts.new(@party).call
     redirect_to "/participants/success"
   end
 
@@ -46,7 +49,6 @@ class PartiesController < ApplicationController
 
   def find_party
     @party = Party.obj_from_encoded_id(params[:id])
-    # OR check email plus holiday passphrase
   end
 
 end

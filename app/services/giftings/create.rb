@@ -1,11 +1,11 @@
 module Giftings
   class Create
 
-    def initialize(party_id)
-      @party = Party.find(party_id)
+    def initialize(party)
+      @party = party
     end
 
-    def create
+    def call
       generate_linkings
       send_emails
     end

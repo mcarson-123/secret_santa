@@ -22,7 +22,7 @@ class Party < ActiveRecord::Base
 
   has_many :participants
   has_many :giftings, through: :participants
-
+  has_many :hosts, -> { hosts }, class_name: Participant
   #---------------------------------------------------------------------
   # Callbacks
   #---------------------------------------------------------------------

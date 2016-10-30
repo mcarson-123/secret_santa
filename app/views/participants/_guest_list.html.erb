@@ -1,0 +1,14 @@
+<table class="participants-guest-list">
+<tr>
+  <th>Name</th>
+  <th>Email</th>
+</tr>
+
+<% @participants.each do |participant| %>
+  <%= render partial:"participants/edit_row", locals: { participant: participant } %>
+<% end %>
+
+<% if @party.giftings.empty? %>
+  <%= render partial:"participants/new_row"%>
+<% end %>
+</table>
