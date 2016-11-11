@@ -34,7 +34,7 @@ class Participant < ActiveRecord::Base
   # Instance Methods
   #---------------------------------------------------------------------
 
-  def name_with_possessive_suffix
+  def name_with_possessive_suffix(name)
     suffix = name.ends_with?("s") ? "'" : "'s"
     "#{name}#{suffix}"
   end

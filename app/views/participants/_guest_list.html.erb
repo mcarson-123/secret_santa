@@ -1,5 +1,8 @@
 <table class="participants-guest-list">
 <tr>
+  <% if @party.sent? %>
+    <th>Confirmed</th>
+  <% end %>
   <th>Name</th>
   <th>Email</th>
 </tr>
@@ -8,7 +11,7 @@
   <%= render partial:"participants/edit_row", locals: { participant: participant } %>
 <% end %>
 
-<% if @party.giftings.empty? %>
+<% unless @party.sent? %>
   <%= render partial:"participants/new_row"%>
 <% end %>
 </table>

@@ -1,6 +1,14 @@
 <tr>
   <%= form_for participant, url: "/participants/#{participant.encoded_id}" do |participant_form| %>
     <%= form_tag method: :put %>
+    <% if @party.sent? %>
+    <td>
+      <%= participant.gifting.confirmed? ? "Yes" : "No" %>
+      <% unless participant.gifting.confirmed? %>
+        <%= link_to "Send Reminder", { controller: "giftings", action: "remind", id: participant.gifting.encoded_id } %>
+      <% end %>
+    </td>
+    <% end %>
     <td>
       <%= participant_form.text_field :name, placeholder: "Name" %>
     </td>

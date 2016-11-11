@@ -11,9 +11,10 @@ Rails.application.routes.draw do
 
   resources :participants, only: [:create, :edit, :update]
   patch "participants/:id/update_preferences" => "participants#update_preferences"
+  get "/participants/success" => "participants#success"
+
+  get "/giftings/:id/remind" => "giftings#remind"
 
   get "confirm/:confirm_token" => "giftings#confirm"
-
-  get "/participants/success" => "participants#success"
 
 end
