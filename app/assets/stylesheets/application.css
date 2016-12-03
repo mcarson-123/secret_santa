@@ -20,11 +20,11 @@
 .secret-santa-application {
   height: 100%;
   width: 100%;
-  background-image: url('winter_scene3.png');
-  background-position: center;
+  background-image: url('trees_background.png'), url('snowflakes.png');
+  background-position: bottom, center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #FCF5F5;
+  background-color: white;
   color: #8C1717;
   font-family: "Trebuchet MS", Helvetica, sans-serif
 }
