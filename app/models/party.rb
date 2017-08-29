@@ -22,5 +22,22 @@ class Party < ActiveRecord::Base
 
   has_many :participants
   has_many :giftings, through: :participants
+  has_many :hosts, -> { hosts }, class_name: Participant
+
+  #---------------------------------------------------------------------
+  # Callbacks
+  #---------------------------------------------------------------------
+
+  before_create :generate_passphrase
+
+  holiday_passphrase :passphrase
+
+  #---------------------------------------------------------------------
+  # Instance Methods
+  #---------------------------------------------------------------------
+
+  def sent?
+    !giftings.empty?
+  end
 
 end

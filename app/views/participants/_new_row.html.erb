@@ -1,0 +1,17 @@
+<tr>
+  <%= form_for @participant do |participant_form| %>
+    <%= hidden_field(:participant, :party_id, value: @party.id) %>
+    <td>
+      <%= participant_form.text_field :name, placeholder: "Name" %>
+    </td>
+    <td>
+      <%= participant_form.text_field :email, placeholder: "Email Address" %>
+    </td>
+    <td>
+      <%= participant_form.check_box :party_owner %> Host
+    </td>
+    <td>
+      <%= participant_form.submit "Add Guest", class: "new-participant-partial" %>
+    </td>
+  <% end %>
+</tr>

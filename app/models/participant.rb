@@ -23,4 +23,20 @@ class Participant < ActiveRecord::Base
   has_one :gifting
   has_one :giftee, through: :gifting
 
+  #---------------------------------------------------------------------
+  # Scopes
+  #---------------------------------------------------------------------
+
+  scope :hosts, -> { where(party_owner: true) }
+
+
+  #---------------------------------------------------------------------
+  # Instance Methods
+  #---------------------------------------------------------------------
+
+  def name_with_possessive_suffix(name)
+    suffix = name.ends_with?("s") ? "'" : "'s"
+    "#{name}#{suffix}"
+  end
+
 end

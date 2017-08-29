@@ -2,10 +2,10 @@
   <h2>Thanks for confirming, see you for the gift giving!</h2>
 
   <p>If you have any gift preferences let your secret santa know below, otherwise happy shopping!</p>
-  <% if !@participant.party.theme.empty? %>
+  <% if !@participant.party.theme.blank? %>
   <p class="participant-confirm-theme">Party Theme: <%= @participant.party.theme %></p>
   <% end %>
-  <%= form_for(@participant, url: { action: "update", id: @participant.encoded_id}) do |participant| %>
+  <%= form_for(@participant, url: { action: "update_preferences", id: @participant.encoded_id}) do |participant| %>
 
     <div class="field">
       <%= participant.text_field :gift_preferences, placeholder: "Preferences..." %>

@@ -6,6 +6,24 @@ class PartiesController < ApplicationController
     @participant = Participant.new
   end
 
+  def find
+    parties = Party
+                .where(passphrase: params[:existing_party][:holiday_passphrase])
+                .joins(:participants)
+                .where("email = ? AND party_owner = true", params[:existing_party][:email])
+
+    if parties.empty?
+      flash[:error] = "no_parties_found"
+      redirect_to "/" and return
+    end
+
+    if parties.size == 1
+      redirect_to "/parties/#{parties.first.encoded_id}" and return
+    else
+      @parties = parties # Ask user to choose which of their parties to view
+    end
+  end
+
   def new
     @party = Party.new
   end
@@ -16,7 +34,10 @@ class PartiesController < ApplicationController
   end
 
   def create_giftings
-    Giftings::Create.new(@party.id).create
+    p "*** PARTY", @party
+    Giftings::Create.new(@party).call
+    # TODO: run in job
+    Participants::EmailHosts.new(@party).call
     redirect_to "/participants/success"
   end
 

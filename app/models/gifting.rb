@@ -12,6 +12,7 @@
 #
 
 class Gifting < ActiveRecord::Base
+  include ObfuscateIds
 
   #---------------------------------------------------------------------
   # Associations

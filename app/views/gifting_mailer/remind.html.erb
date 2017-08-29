@@ -1,0 +1,7 @@
+<p>
+The holidays are coming <%= @participant.name %>! This is a reminder that you will be a secret santa for <%= @gifting.giftee.name %> at <%= @participant.party.name %>
+</p>
+
+<p>
+Please confirm you will be a Secret Santa at this party at <%= confirmation_url(@gifting.confirm_token) %>
+</p>
