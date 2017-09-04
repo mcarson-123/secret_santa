@@ -34,7 +34,6 @@ class PartiesController < ApplicationController
   end
 
   def create_giftings
-    p "*** PARTY", @party
     Giftings::Create.new(@party).call
     # TODO: run in job
     Participants::EmailHosts.new(@party).call
