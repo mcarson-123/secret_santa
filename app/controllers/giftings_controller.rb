@@ -9,7 +9,9 @@ class GiftingsController < ApplicationController
 
   def remind
     GiftingMailer.remind(@gifting).deliver_later
-    redirect_to "/parties/#{@gifting.participant.party.encoded_id}"
+    participant = @gifting.participant
+    flash[:notice] = %(Gifting email resent to #{participant.name})
+    redirect_to "/parties/#{participant.party.encoded_id}"
   end
 
   private
