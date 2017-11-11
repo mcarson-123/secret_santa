@@ -1,0 +1,42 @@
+@import "variables";
+
+/* All Welcome page specific styles */
+
+.welcome {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .border-box {
+    width: 500px;
+  }
+}
+
+.welcome-heading {
+  h1 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    padding-bottom: 0;
+    margin: 0;
+    margin-top: 26px;
+    font-size: 40px;
+  }
+}
+
+.welcome-new-party {
+  width: 60%;
+  margin-top: -20px;
+  a {
+    color: inherit;
+  }
+}
+
+.welcome-parties {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-existing-party {
+  width: 60%;
+}

@@ -1,17 +1,18 @@
 <table class="participants-guest-list">
-<tr>
-  <% if @party.sent? %>
-    <th>Confirmed</th>
+  <tr>
+    <% if @party.sent? %>
+      <th>Confirmed</th>
+    <% end %>
+    <th class="participants-guest-list-details-heading">
+      Details
+    </th>
+  </tr>
+
+  <% @participants.each do |participant| %>
+    <%= render partial:"participants/edit_row", locals: { participant: participant } %>
   <% end %>
-  <th>Name</th>
-  <th>Email</th>
-</tr>
 
-<% @participants.each do |participant| %>
-  <%= render partial:"participants/edit_row", locals: { participant: participant } %>
-<% end %>
-
-<% unless @party.sent? %>
-  <%= render partial:"participants/new_row"%>
-<% end %>
+  <% unless @party.sent? %>
+    <%= render partial:"participants/new_row"%>
+  <% end %>
 </table>
