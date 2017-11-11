@@ -3,5 +3,15 @@ Happy Holidays <%= @participant.name %>! You will be a secret santa for <%= @gif
 </p>
 
 <p>
+<% if @participant.party.theme %>
+  The theme is <%= @participant.party.theme %>.
+<% end %>
+<% if @participant.party.spending_limit %>
+  The gift budget is <%= @participant.party.spending_limit %>.
+<% end %>
+</p>
+
+
+<p>
 Please confirm you will be a Secret Santa at this party at <%= confirmation_url(@gifting.confirm_token) %>
 </p>
