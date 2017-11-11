@@ -1,10 +1,12 @@
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
-<h1 class="party-show">Add your guests</h1>
-<p class="party-show-reminder">(Don't forget to add yourself...)</p>
-<!-- allow options to be added -->
-<%= render partial:"participants/guest_list" %>
-<% if @party.giftings.empty? %>
-  <%= button_to "Generate Secret Santas", {:controller => :parties, :action => :create_giftings, id: @party.encoded_id}, {:method => :get} %>
-<% end %>
+<div class="border-box">
+  <h1 class="party-show">Add your guests</h1>
+  <p class="party-show-reminder">(Don't forget to add yourself...)</p>
+  <!-- allow options to be added -->
+  <%= render partial:"participants/guest_list" %>
+  <% if @party.giftings.empty? %>
+    <%= button_to "Generate Secret Santas", {:controller => :parties, :action => :create_giftings, id: @party.encoded_id}, {:method => :get} %>
+  <% end %>
+</div>

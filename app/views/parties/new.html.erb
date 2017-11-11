@@ -1,11 +1,11 @@
-<%= form_for(@party) do |party| %>
-
-  <div class="field">
-    <h1>Create a new party</h1>
-    <%= party.text_field :name, placeholder: "Party name" %>
-    <%= party.text_field :theme, placeholder: "Party theme" %>
-    <%= party.text_field :spending_limit, placeholder: "Spending Limit" %>
+<div class="border-box">
+  <div class="parties-new">
+    <%= form_for(@party) do |party| %>
+      <h1>Create a new party</h1>
+      <%= party.text_field :name, placeholder: "Party name" %>
+      <%= party.text_field :theme, placeholder: "Party theme" %>
+      <%= party.text_field :spending_limit, placeholder: "Spending Limit" %>
+      <%= party.submit %>
+    <% end %>
   </div>
-  <%= party.submit %>
-
-<% end %>
+</div>

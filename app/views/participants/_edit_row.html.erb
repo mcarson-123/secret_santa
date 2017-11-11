@@ -4,6 +4,7 @@
     <% if @party.sent? %>
     <td>
       <%= participant.gifting.confirmed? ? "Yes" : "No" %>
+      <br/>
       <% unless participant.gifting.confirmed? %>
         <%= link_to "Send Reminder", { controller: "giftings", action: "remind", id: participant.gifting.encoded_id } %>
       <% end %>
@@ -11,8 +12,6 @@
     <% end %>
     <td>
       <%= participant_form.text_field :name, placeholder: "Name" %>
-    </td>
-    <td>
       <%= participant_form.text_field :email, placeholder: "Email Address" %>
     </td>
     <td>

@@ -1,0 +1,80 @@
+@import "variables";
+
+/* All application wide styles */
+
+.border-box {
+  max-width: 660px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: white;
+  padding: 20px;
+  border: 10px solid $snow;
+  border-radius: 4px;
+}
+
+html {
+height: 100%;
+}
+
+.secret-santa-application {
+  height: 100%;
+  width: 100%;
+  background-image: url('trees_background.png'), url('snowflakes.png');
+  background-position: bottom, center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+  color: #8C1717;
+  font-family: "Trebuchet MS", Helvetica, sans-serif
+}
+
+h1 {
+  font-weight: normal;
+  padding-bottom: 15px;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 20px;
+}
+
+input[type=text] {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #E22626;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #E59E9E;
+  }
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #E59E9E;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #E59E9E;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #E59E9E;
+}
+
+input[type=submit] {
+  border: none;
+  border-radius: 4px;
+  background-color: #E22626;
+  font-size: 16px;
+  padding: 5px 10px;
+  color: white;
+  margin-top: 10px;
+}
+
+input:focus, input:hover {
+  outline-color: #E22626
+}

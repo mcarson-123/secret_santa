@@ -1,3 +1,62 @@
-// Place all the styles related to the participants controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+/* All Participants specific styles */
+
+ul.participants-partial {
+  list-style: none;
+  padding-left: 30px;
+}
+
+.participants-guest-list-details-heading {
+  width: 250px;
+}
+
+.participants-guest-list {
+  td {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    input[type=text] {
+      width: 230px;
+    }
+  }
+}
+
+input[type=submit].new-participant-partial {
+  margin-top: 0;
+}
+
+form.new_participant {
+  padding-top: 10px;
+}
+
+h1.participants-success {
+  font-size: 60px;
+  text-align: center;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  padding-top: 10%
+}
+
+.participant-edit-confirm {
+  padding-left: 30px;
+  padding-top: 30px;
+  font-size: 18px;
+}
+
+.participant-edit-confirm > h2 {
+  padding-bottom: 20px;
+}
+
+.participant-confirm-theme {
+  padding-left: 30px;
+  font-size: 16px;
+  padding-top: 10px;
+}
+
+form.edit_participant {
+  padding-top: 0;
+}
+
+input[type=submit].add-preferences {
+  margin-top: 0;
+}
