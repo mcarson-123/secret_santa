@@ -1,0 +1,25 @@
+<h1 class="serif-font santas-list-heading">Santa's List</h1>
+<div class="santas-list">
+  <div class="border-box">
+    <table class="santas-list-table">
+      <tr>
+        <th>
+          Guest
+        </th>
+        <th>
+          Buys for
+        </th>
+      </tr>
+      <%- @party.giftings.each do |gifting| %>
+        <tr>
+          <td>
+            <%= gifting.participant.name %>
+          </td>
+          <td>
+          <%= gifting.giftee.name %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

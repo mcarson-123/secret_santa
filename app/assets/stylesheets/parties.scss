@@ -16,3 +16,36 @@ p.party-show-reminder {
   width: 400px;
   margin: auto;
 }
+
+.santas-list-confirm {
+  font-size: 30px;
+  text-align: center;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  padding-top: 10%
+}
+
+.santas-list-heading {
+  text-align: center;
+}
+
+.santas-list {
+
+  .border-box {
+    width: 400px;
+  }
+}
+
+.santas-list-table {
+  margin: auto;
+  text-align: left;
+
+  th {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  td {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 
   get "confirm/:confirm_token" => "giftings#confirm"
 
+  get "/parties/:id/santas_list_confirm" => "parties#santas_list_confirm"
+  get "/parties/:id/santas_list" => "parties#santas_list"
 end

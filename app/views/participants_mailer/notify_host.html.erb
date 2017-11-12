@@ -10,3 +10,7 @@ view your party details, or update guest's emails
 <br/>
 'Continue existing party' with your email and the holiday passphrase '<%= @host.party.passphrase %>'
 </p>
+
+<p>
+To view Santa's master list of guests and gift pairings, follow this link: <%= app_root_url %>parties/<%= @host.party.encoded_id %>/santas_list_confirm
+</p>

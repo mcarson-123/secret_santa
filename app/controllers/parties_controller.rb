@@ -1,5 +1,6 @@
 class PartiesController < ApplicationController
-  before_action :find_party, only: [:show, :create_giftings]
+  before_action :find_party,
+    only: [:show, :create_giftings, :santas_list_confirm, :santas_list]
 
   def show
     @participants = @party.participants
@@ -38,6 +39,12 @@ class PartiesController < ApplicationController
     # TODO: run in job
     Participants::EmailHosts.new(@party).call
     redirect_to "/participants/success"
+  end
+
+  def santas_list_confirm
+  end
+
+  def santas_list
   end
 
   private
