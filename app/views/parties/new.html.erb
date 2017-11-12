@@ -4,8 +4,15 @@
       <h1>Create a new party</h1>
       <%= party.text_field :name, placeholder: "Party name" %>
       <%= party.text_field :theme, placeholder: "Party theme" %>
-      <%= party.text_field :spending_limit, placeholder: "Spending Limit" %>
-      <%= party.submit %>
+      <div class="parties-new-spending-limit">
+        <div class="parties-new-spending-limit-sign">$</div>
+        <div class="parties-new-spending-limit-input">
+          <%= party.text_field :spending_limit, placeholder: "Spending Limit" %>
+        </div>
+      </div>
+      <div class="parties-new-submit">
+        <%= party.submit %>
+      </div>
     <% end %>
   </div>
 </div>
