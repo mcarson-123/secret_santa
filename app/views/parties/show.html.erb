@@ -7,10 +7,11 @@
   <% else %>
     <h1 class="party-show">Add your guests</h1>
     <p class="party-show-reminder">(Don't forget to add yourself...)</p>
+    <%= link_to "Add Family", { controller: "families", action: "new", party_id: @party.id, remote: true } %>
   <% end %>
-  <!-- allow options to be added -->
   <%= render partial:"participants/guest_list" %>
   <% if @party.giftings.empty? %>
     <%= button_to "Generate Secret Santas", {:controller => :parties, :action => :create_giftings, id: @party.encoded_id}, {:method => :get} %>
+    <%= button_to "Group into Families", {:controller => :parties, :action => :group_families, id: @party.encoded_id}, {:method => :get} %>
   <% end %>
 </div>

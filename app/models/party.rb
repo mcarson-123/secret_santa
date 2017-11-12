@@ -21,6 +21,7 @@ class Party < ActiveRecord::Base
   #---------------------------------------------------------------------
 
   has_many :participants
+  has_many :families, -> { distinct }, through: :participants
   has_many :giftings, through: :participants
   has_many :hosts, -> { hosts }, class_name: Participant
 
@@ -38,6 +39,12 @@ class Party < ActiveRecord::Base
 
   def sent?
     !giftings.empty?
+  end
+
+  def party_guests_not_in_family(participant)
+    participants.reject do |guest|
+      guest.family.id == participant.family.id
+    end
   end
 
 end

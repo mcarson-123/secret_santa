@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :parties, only: [:show, :new, :create]
   get "parties/:id/create_giftings" => "parties#create_giftings"
+  get "parties/:id/create_giftings_families" => "parties#create_giftings_families"
   post "parties/find" => "parties#find"
 
   resources :participants, only: [:create, :edit, :update]
@@ -19,4 +20,7 @@ Rails.application.routes.draw do
 
   get "/parties/:id/santas_list_confirm" => "parties#santas_list_confirm"
   get "/parties/:id/santas_list" => "parties#santas_list"
+  get "/parties/:id/group_families" => "parties#group_families"
+
+  resources :families, only: [:new, :create, :edit]
 end

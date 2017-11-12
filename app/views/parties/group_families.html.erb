@@ -1,0 +1,23 @@
+<div>
+  <div class="border-box">
+    <div class="new-family">
+      <%= form_for Family.new do |family_form| %>
+        <%= hidden_field(:party, :encoded_id, value: @party.encoded_id) %>
+          <%= family_form.collection_check_boxes(:participant_ids, @party.participants.without_family, :id, :name ) %>
+          <%= family_form.text_field :name, placeholder: "Family Name" %>
+        <%= family_form.submit "Add Family", class: "new-family-partial" %>
+      <% end %>
+    </div>
+    <div class="existing-families">
+      <%- @party.families.each do |family| %>
+        <div class="family">
+        <h2><%= family.name %></h2>
+          <%- family.participants.each do |participant| %>
+            <%= participant.name %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <%= button_to "Generate Secret Santas", {:controller => :parties, :action => :create_giftings_families, id: @party.encoded_id}, {:method => :get} %>
+  </div>
+</div>

@@ -10,6 +10,7 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  gift_preferences :text             default([]), is an Array
+#  family_id        :integer
 #
 
 require 'rails_helper'

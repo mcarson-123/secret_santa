@@ -10,6 +10,7 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  gift_preferences :text             default([]), is an Array
+#  family_id        :integer
 #
 
 class Participant < ActiveRecord::Base
@@ -20,6 +21,7 @@ class Participant < ActiveRecord::Base
   #---------------------------------------------------------------------
 
   belongs_to :party
+  belongs_to :family
   has_one :gifting
   has_one :giftee, through: :gifting
 
@@ -28,6 +30,7 @@ class Participant < ActiveRecord::Base
   #---------------------------------------------------------------------
 
   scope :hosts, -> { where(party_owner: true) }
+  scope :without_family, -> { where(family: nil) }
 
 
   #---------------------------------------------------------------------
