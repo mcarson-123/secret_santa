@@ -7,7 +7,6 @@
   <% else %>
     <h1 class="party-show">Add your guests</h1>
     <p class="party-show-reminder">(Don't forget to add yourself...)</p>
-    <%= link_to "Add Family", { controller: "families", action: "new", party_id: @party.id, remote: true } %>
   <% end %>
   <%= render partial:"participants/guest_list" %>
   <% if @party.giftings.empty? %>
