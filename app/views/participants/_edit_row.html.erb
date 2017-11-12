@@ -3,7 +3,7 @@
     <%= form_tag method: :put %>
     <% if @party.sent? %>
     <td>
-      <%= participant.gifting.confirmed? ? "Yes" : "No" %>
+      <%= participant.gifting.confirmed? ? "Confirmed" : "Not Confirmed" %>
       <br/>
       <% unless participant.gifting.confirmed? %>
         <%= link_to "Send Reminder", { controller: "giftings", action: "remind", id: participant.gifting.encoded_id } %>

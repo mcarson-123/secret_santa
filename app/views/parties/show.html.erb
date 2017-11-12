@@ -2,8 +2,12 @@
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 <div class="border-box">
-  <h1 class="party-show">Add your guests</h1>
-  <p class="party-show-reminder">(Don't forget to add yourself...)</p>
+  <% if @party.sent? %>
+    <h1 class="party-show">Your guest list</h1>
+  <% else %>
+    <h1 class="party-show">Add your guests</h1>
+    <p class="party-show-reminder">(Don't forget to add yourself...)</p>
+  <% end %>
   <!-- allow options to be added -->
   <%= render partial:"participants/guest_list" %>
   <% if @party.giftings.empty? %>
