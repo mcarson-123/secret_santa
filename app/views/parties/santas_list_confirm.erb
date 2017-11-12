@@ -1,0 +1,4 @@
+<div class="santas-list-confirm">
+  Are you sure you want to view Santa's master list?
+  <%= button_to "View list", {:controller => :parties, :action => :santas_list, id: @party.encoded_id}, {:method => :get} %>
+</div>
