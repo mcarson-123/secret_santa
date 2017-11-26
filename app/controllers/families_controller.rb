@@ -25,6 +25,8 @@ class FamiliesController < ApplicationController
     redirect_to "/parties/#{party_id}/group_families"
   end
 
+  # TODO: add delete family routes (edit family? might be easier to delete)
+
   def edit
   end
 

@@ -41,10 +41,17 @@ class Party < ActiveRecord::Base
     !giftings.empty?
   end
 
+  # Move to participant model? then no need to
+  # have any params
+  # Semantically makes more sense to be on the
+  # party model though
   def party_guests_not_in_family(participant)
-    participants.reject do |guest|
-      guest.family.id == participant.family.id
-    end
+    # participants.reject do |guest|
+    #   guest.family.id == participant.family.id
+    # end
+
+    family_members = participant.family.participants
+    return participants - family_members
   end
 
 end

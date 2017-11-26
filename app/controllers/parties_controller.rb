@@ -42,11 +42,17 @@ class PartiesController < ApplicationController
   end
 
   def create_giftings_families
+    # TODO: If one family is larger than the rest of
+    # the participants added together, there cannot
+    # be a pairing
+    # Show message asking user to confirm this is okay?
     Giftings::CreateForFamilies.new(@party).call
     # TODO: run in job
     Participants::EmailHosts.new(@party).call
     redirect_to "/participants/success"
   end
+
+  ###### View routes ######
 
   def santas_list_confirm
   end

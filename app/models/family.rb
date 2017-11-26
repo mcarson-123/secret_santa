@@ -21,4 +21,12 @@ class Family < ActiveRecord::Base
 
   has_many :participants
 
+  #---------------------------------------------------------------------
+  # Instance Methods
+  #---------------------------------------------------------------------
+
+  def size
+    return participants.count
+  end
+
 end
